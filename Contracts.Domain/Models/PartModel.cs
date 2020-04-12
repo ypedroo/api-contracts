@@ -1,16 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Contracts.Domain.Core.Models;
+using System;
 
 namespace Contracts.Domain.Models
 {
-    class PartModel
+    public class PartModel : Entity
     {
-        public string FistName { get; set; }
-        public string LastName { get; set; }
-        public string Email { get; set; }
-        public string Cpf { get; set; }
-        public string Phone { get; set; }
+        public PartModel(PartInformation partInformation)
+        {
+            Id = Guid.NewGuid();
+            Information.FistName = partInformation.FistName;
+            Information.LastName = partInformation.LastName;
+            Information.Cpf = partInformation.Cpf;
+            Information.Email = partInformation.Email;
+            Information.Phone = partInformation.Phone;
+        }
 
+        public PartInformation Information { get; set; }
     }
 }
