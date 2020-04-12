@@ -3,9 +3,9 @@ using System;
 
 namespace Contracts.Domain.Models
 {
-    public class PartModel : Entity
+    public class Part : Entity
     {
-        public PartModel(PartInformation partInformation)
+        public Part(PartInformation partInformation)
         {
             Id = Guid.NewGuid();
             Information.FistName = partInformation.FistName;
