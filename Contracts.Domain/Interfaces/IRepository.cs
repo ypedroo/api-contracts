@@ -5,7 +5,7 @@ namespace Contracts.Infra.Data.Repositories
 {
     public interface IRepository<T> where T : Entity
     {
-        void Add(T Entity);
+        void Add(T entity);
         List<T> GetAll();
         T Get();
     }
