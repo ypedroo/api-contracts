@@ -1,7 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Contracts.Domain.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Contracts.Infra.Data.Context
 {
@@ -13,5 +11,13 @@ namespace Contracts.Infra.Data.Context
         }
         protected override void OnConfiguring(DbContextOptionsBuilder options)
             => options.UseSqlite(@"Data Source='C:\dev\sqlite\Contracts.db");
+
+        protected override void OnModelCreating(ModelBuilder model)
+        {
+            model.Entity<PartInformation>()
+                .Property(p => p.Cpf)
+                .IsRequired()
+                .HasMaxLength(11);
+        }
     }
 }
