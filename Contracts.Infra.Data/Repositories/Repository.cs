@@ -1,5 +1,7 @@
 ﻿using Contracts.Domain.Core.Models;
+using Contracts.Infra.Data.Context;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Contracts.Infra.Data.Repositories
 {
