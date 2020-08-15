@@ -1,20 +1,15 @@
-﻿using Contracts.Domain.Core.Models;
-using System;
+﻿using MongoDB.Bson.Serialization.Attributes;
 
 namespace Contracts.Domain.Models
 {
-    public class Part : Entity
+    public sealed class Part
     {
-        public Part(PartInformation partInformation)
-        {
-            Id = Guid.NewGuid();
-            Information.FistName = partInformation.FistName;
-            Information.LastName = partInformation.LastName;
-            Information.Cpf = partInformation.Cpf;
-            Information.Email = partInformation.Email;
-            Information.Phone = partInformation.Phone;
-        }
-
-        public PartInformation Information { get; set; }
+        [BsonId]
+        public int PartId { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Cpf { get; set; }
+        public string Email { get; set; }
+        public string Phone { get; set; }
     }
 }
