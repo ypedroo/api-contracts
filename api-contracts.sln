@@ -7,11 +7,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C7A4C2A8-D37
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contracts.WebApi", "src\Contracts.WebApi\Contracts.WebApi.csproj", "{8F475810-072B-4602-A28C-EC4256273325}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contracts.Infra.Data", "Contracts.Infra.Data\Contracts.Infra.Data.csproj", "{759B4930-DCD7-4645-9148-6CFD682D915A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contracts.Infra.Data", "Contracts.Infra.Data\Contracts.Infra.Data.csproj", "{759B4930-DCD7-4645-9148-6CFD682D915A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contracts.Domain", "Contracts.Domain\Contracts.Domain.csproj", "{90EAF659-8470-4BF7-90AC-B59A131E4CEC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contracts.Domain", "Contracts.Domain\Contracts.Domain.csproj", "{90EAF659-8470-4BF7-90AC-B59A131E4CEC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contracts.Domain.Core", "Contracts.Domain.Core\Contracts.Domain.Core.csproj", "{49DB8FAC-6229-45B4-9021-063286967162}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contracts.Shared", "Contracts.Domain.Core\Contracts.Shared.csproj", "{49DB8FAC-6229-45B4-9021-063286967162}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
