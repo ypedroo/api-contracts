@@ -3,11 +3,11 @@ using MongoDB.Driver;
 
 namespace Contracts.Infra.Data.MongoDb
 {
-    public sealed class DataContext
+    public sealed class ContractsContext
     {
         private readonly IMongoDatabase _database;
 
-        public DataContext(IMongoClient client, AppSettings settings)
+        public ContractsContext(IMongoClient client, AppSettings settings)
             => _database = client.GetDatabase(settings.DatabaseName);
 
         public IMongoCollection<T> GetCollection<T>(string name) where T : class
