@@ -1,4 +1,6 @@
-﻿using MediatR;
+﻿using System.Threading.Tasks;
+using Contracts.Shared.Commands;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
 
@@ -12,5 +14,9 @@ namespace Contracts.WebApi.Controllers
         : base(mediator)
         {
         }
+
+        [HttpGet("info/partById")]
+        public Task<IActionResult> GetPartById(int id)
+            => SendCommand(new GetPartCommand(id));
     }
 }
