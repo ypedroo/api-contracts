@@ -1,32 +1,16 @@
-﻿using System;
+﻿using Contracts.Shared.Settings;
 using MongoDB.Driver;
 
 namespace Contracts.Infra.Data.MongoDb
 {
     public sealed class DataContext
     {
-        public static string ConnectionString { get; set; }
-        public static string DatabaseName { get; set; }
-        public static bool IsSSL { get; set; }
+        private readonly IMongoDatabase _database;
 
-        private IMongoDatabase _database { get; }
+        public DataContext(IMongoClient client, AppSettings settings)
+            => _database = client.GetDatabase(settings.DatabaseName);
 
-        public DataContext()
-        {
-            try
-            {
-                MongoClientSettings settings = MongoClientSettings.FromUrl(new MongoUrl(ConnectionString));
-                if (IsSSL)
-                {
-                    settings.SslSettings = new SslSettings { EnabledSslProtocols = System.Security.Authentication.SslProtocols.Tls12 };
-                }
-                var mongoClient = new MongoClient(settings);
-                _database = mongoClient.GetDatabase(DatabaseName);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Não foi possível se conectar com o servidor.", ex);
-            }
-        }
+        public IMongoCollection<T> GetCollection<T>(string name) where T : class
+            => _database.GetCollection<T>(name);
     }
 }
