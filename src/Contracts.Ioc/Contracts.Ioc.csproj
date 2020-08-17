@@ -5,6 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MongoDB.Driver" Version="2.11.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Contracts.Infra.Data\Contracts.Infra.Data.csproj" />
     <ProjectReference Include="..\Contracts.Shared\Contracts.Shared.csproj" />
   </ItemGroup>
 

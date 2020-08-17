@@ -12,4 +12,9 @@
     <Folder Include="Controllers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Contracts.Ioc\Contracts.Ioc.csproj" />
+    <ProjectReference Include="..\Contracts.Shared\Contracts.Shared.csproj" />
+  </ItemGroup>
+
 </Project>
