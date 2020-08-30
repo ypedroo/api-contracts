@@ -1,11 +1,7 @@
-﻿using MongoDB.Bson.Serialization.Attributes;
-
-namespace Contracts.Domain.Models
+﻿namespace Contracts.Shared
 {
     public sealed class PartViewModel
     {
-        [BsonId]
-        public int PartId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Cpf { get; set; }

@@ -4,7 +4,7 @@ using OperationResult;
 
 namespace Contracts.Shared.Commands
 {
-    public sealed class GetAllPartsCommand : IRequest<Result<Part>>
+    public sealed class GetAllPartsCommand : IRequest<Result<Domain.Models.PartViewModel>>
     {
         public GetAllPartsCommand()
         {

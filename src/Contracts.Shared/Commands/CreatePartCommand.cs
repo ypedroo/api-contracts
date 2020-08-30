@@ -1,10 +1,9 @@
-﻿using Contracts.Domain.Models;
-using MediatR;
+﻿using MediatR;
 using OperationResult;
 
 namespace Contracts.Shared.Commands
 {
-    public sealed class CreatePartCommand : IRequest<Result<Part>>
+    public sealed class CreatePartCommand : IRequest<Result<PartViewModel>>
     {
         public string FirstName { get; }
         public string LastName { get; }
@@ -12,7 +11,7 @@ namespace Contracts.Shared.Commands
         public string Email { get; }
         public string Phone { get; }
 
-        public CreatePartCommand(Part part)
+        public CreatePartCommand(PartViewModel part)
         {
             FirstName = part.FirstName;
             LastName = part.LastName;
