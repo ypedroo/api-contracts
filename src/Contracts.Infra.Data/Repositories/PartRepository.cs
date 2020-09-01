@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Contracts.Domain.Repositories;
-using Contracts.Shared;
+using Contracts.Shared.Dtos;
 using OperationResult;
 
 namespace Contracts.Infra.Data.Repositories

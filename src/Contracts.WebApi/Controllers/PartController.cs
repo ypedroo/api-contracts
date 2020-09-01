@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
-using Contracts.Shared;
 using Contracts.Shared.Commands;
+using Contracts.Shared.Dtos;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;

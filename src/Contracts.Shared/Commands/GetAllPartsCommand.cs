@@ -1,10 +1,10 @@
-﻿using Contracts.Domain.Models;
+﻿using Contracts.Shared.Dtos;
 using MediatR;
 using OperationResult;
 
 namespace Contracts.Shared.Commands
 {
-    public sealed class GetAllPartsCommand : IRequest<Result<Domain.Models.Part>>
+    public sealed class GetAllPartsCommand : IRequest<Result<PartDto>>
     {
         public GetAllPartsCommand()
         {

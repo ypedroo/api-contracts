@@ -1,4 +1,4 @@
-﻿namespace Contracts.Shared
+﻿namespace Contracts.Shared.Dtos
 {
     public sealed class PartDto
     {

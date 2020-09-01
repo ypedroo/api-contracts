@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using Contracts.Shared.Dtos;
+using MediatR;
 using OperationResult;
 
 namespace Contracts.Shared.Commands
