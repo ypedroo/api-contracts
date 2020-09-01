@@ -1,6 +1,6 @@
 ﻿namespace Contracts.Shared
 {
-    public sealed class PartViewModel
+    public sealed class PartDto
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }

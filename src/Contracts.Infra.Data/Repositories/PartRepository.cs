@@ -8,17 +8,17 @@ namespace Contracts.Infra.Data.Repositories
 {
     public sealed class PartRepository : IPartRepository
     {
-        public Task CreatePart(PartViewModel part)
+        public Task CreatePart(PartDto part)
         {
             throw new System.NotImplementedException();
         }
 
-        public Result<PartViewModel> GetPartById(int id)
+        public Result<PartDto> GetPartById(int id)
         {
             throw new System.NotImplementedException();
         }
 
-        public Result<List<PartViewModel>> GetParts()
+        public Result<List<PartDto>> GetParts()
         {
             throw new System.NotImplementedException();
         }

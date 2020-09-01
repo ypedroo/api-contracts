@@ -2,7 +2,7 @@
 
 namespace Contracts.Domain.Models
 {
-    public sealed class PartViewModel
+    public sealed class Part
     {
         [BsonId]
         public int PartId { get; set; }

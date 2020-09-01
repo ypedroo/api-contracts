@@ -3,7 +3,7 @@ using OperationResult;
 
 namespace Contracts.Shared.Commands
 {
-    public sealed class CreatePartCommand : IRequest<Result<PartViewModel>>
+    public sealed class CreatePartCommand : IRequest<Result<PartDto>>
     {
         public string FirstName { get; }
         public string LastName { get; }
@@ -11,7 +11,7 @@ namespace Contracts.Shared.Commands
         public string Email { get; }
         public string Phone { get; }
 
-        public CreatePartCommand(PartViewModel part)
+        public CreatePartCommand(PartDto part)
         {
             FirstName = part.FirstName;
             LastName = part.LastName;

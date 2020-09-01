@@ -25,7 +25,7 @@ namespace Contracts.WebApi.Controllers
             => SendCommand(new GetAllPartsCommand());
 
         [HttpPost("info/parts")]
-        public Task<IActionResult> CreatePart(PartViewModel part)
+        public Task<IActionResult> CreatePart(PartDto part)
             => SendCommand(new CreatePartCommand(part));
     }
 }
