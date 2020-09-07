@@ -5,15 +5,21 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
 
 namespace Contracts.WebApi
 {
     public class Startup
     {
-        public AppSettings settings { get; set; }
+        public AppSettings Settings { get; set; }
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDataContext(settings);
+            services.AddDataContext(Settings);
+            services.AddContractsConfigurations();
+            services.AddSwaggerGen(swagger =>
+            {
+                swagger.SwaggerDoc("v1", new OpenApiInfo { Title = "Contracts Api" });
+            });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -24,6 +30,12 @@ namespace Contracts.WebApi
             }
 
             app.UseRouting();
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Contracts Api");
+            });
 
             app.UseEndpoints(endpoints =>
             {
