@@ -4,21 +4,17 @@ using OperationResult;
 
 namespace Contracts.Shared.Commands
 {
-    public sealed class CreatePartCommand : IRequest<Result<PartDto>>
+    public sealed class CreatePartCommand : IRequest<Result>
     {
-        public string FirstName { get; }
-        public string LastName { get; }
-        public string Cpf { get; }
-        public string Email { get; }
-        public string Phone { get; }
+        public PartDto Part { get; }
 
-        public CreatePartCommand(PartDto part)
+        public CreatePartCommand(PartDto request)
         {
-            FirstName = part.FirstName;
-            LastName = part.LastName;
-            Cpf = part.Cpf;
-            Email = part.Email;
-            Phone = part.Phone;
+            Part.FirstName = request.FirstName;
+            Part.LastName = request.LastName;
+            Part.Cpf = request.Cpf;
+            Part.Email = request.Email;
+            Part.Phone = request.Phone;
         }
     }
 }

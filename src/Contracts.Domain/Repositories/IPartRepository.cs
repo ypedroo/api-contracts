@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Threading.Tasks;
 using Contracts.Shared.Dtos;
 using OperationResult;
 
@@ -9,6 +8,6 @@ namespace Contracts.Domain.Repositories
     {
         Result<List<PartDto>> GetParts();
         Result<PartDto> GetPartById(int id);
-        Task CreatePart(PartDto part);
+        Result CreatePart(PartDto part);
     }
 }
