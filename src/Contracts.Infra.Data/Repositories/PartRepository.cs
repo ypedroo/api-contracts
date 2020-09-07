@@ -1,16 +1,22 @@
 ﻿using System.Collections.Generic;
-using System.Threading.Tasks;
+using AutoMapper;
 using Contracts.Domain.Repositories;
+using Contracts.Infra.Data.MongoDb;
 using Contracts.Shared.Dtos;
+using MongoDB.Driver;
 using OperationResult;
 
 namespace Contracts.Infra.Data.Repositories
 {
     public sealed class PartRepository : IPartRepository
     {
-        public Task CreatePart(PartDto part)
+        private readonly IMongoCollection<PartDto> _logCollection;
+        private readonly IMapper _mapper;
+
+        public PartRepository(ContractsContext context, IMapper mapper)
         {
-            throw new System.NotImplementedException();
+            _logCollection = context.GetCollection<PartDto>("Part");
+            _mapper = mapper;
         }
 
         public Result<PartDto> GetPartById(int id)
@@ -19,6 +25,11 @@ namespace Contracts.Infra.Data.Repositories
         }
 
         public Result<List<PartDto>> GetParts()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        Result IPartRepository.CreatePart(PartDto part)
         {
             throw new System.NotImplementedException();
         }
