@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using AutoMapper;
+using Contracts.Domain.Models;
 using Contracts.Domain.Repositories;
 using Contracts.Infra.Data.MongoDb;
 using Contracts.Shared.Dtos;
@@ -10,12 +12,12 @@ namespace Contracts.Infra.Data.Repositories
 {
     public sealed class PartRepository : IPartRepository
     {
-        private readonly IMongoCollection<PartDto> _logCollection;
+        private readonly IMongoCollection<Part> _logCollection;
         private readonly IMapper _mapper;
 
         public PartRepository(ContractsContext context, IMapper mapper)
         {
-            _logCollection = context.GetCollection<PartDto>("Part");
+            _logCollection = context.GetCollection<Part>("Part");
             _mapper = mapper;
         }
 
@@ -31,7 +33,16 @@ namespace Contracts.Infra.Data.Repositories
 
         Result IPartRepository.CreatePart(PartDto part)
         {
-            throw new System.NotImplementedException();
+            try
+            {
+                _logCollection.InsertOne(_mapper.Map<Part>(part));
+                return Result.Success();
+
+            }
+            catch (Exception ex)
+            {
+                return Result.Error(ex);
+            }
         }
     }
 }
